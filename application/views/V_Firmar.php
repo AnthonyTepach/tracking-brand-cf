@@ -18,15 +18,18 @@
     <div class="container">
     <hr>
         <div class="row">
-            <div class="col-sm" style="border: 1px solid #000000; border-radius: 14px;">
-                <center><canvas id="pizarra" class="img-fluid"></canvas></center>
+            <div class="col-sm ">
+                <div class="bg-item">
+                <canvas id="pizarra" class="img-fluid"></canvas>
+                </div>
+               
                 <div id="Estado"></div>
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-sm">
-                <button type="button" class="btn btn-primary btn-lg btn-block" id="Firma">Firmar</button>
+                <button type="button" class="btn btn-blanco btn-lg btn-block" id="Firma">Firmar</button>
             </div>
         </div>
     </div>

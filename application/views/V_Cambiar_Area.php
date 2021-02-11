@@ -10,8 +10,11 @@
 <?php include APPPATH.'views/body.php';?>
     <div class="container">
     <hr>
-    <?php if ($consulta->num_rows()==0) { ?>
-        <div class="alert alert-warning" role="alert">
+    
+		<?php
+		/** @var String $consulta  Es una variable que se recupera desde un constructor*/
+	if ($consulta->num_rows()==0) { ?>
+        <div class="tamanio bg-degradado" >
               <?php
                 $area= $this->uri->segment(2);
                 $areaCo="";
@@ -26,16 +29,19 @@
                     $areaCo="No han terminado la instalación de vinil en ningún automóvil";
                 }
             ?>
-             <?=$areaCo?> 
+             <?=$areaCo?> <img class="img-fluid" width="70px" src="<?=base_url('assets/recursos/camion.svg')?>" alt="vector-camion" srcset="">
         </div>
     <?php } else{?>
+        <div class="centrado">
+        <h4 class="burbuja2">Pasar a <?=$this->uri->segment(2)?></h4>
+    </div>
         <?=form_open_multipart(base_url('C_Auto/UpdateStatus/').$this->uri->segment(2),'id="f_detalles"')?>
         <div class="row">
             <div class="col-sm">
                 <!---->
                 <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <label class="input-group-text" for="placas_auto">Placas auto</label>
+                    <label  id="input-group-text2" class="input-group-text" for="placas_auto">Placas auto</label>
                 </div>
                 <select class="custom-select" id="placas_auto" name="placas_auto">
                     <option selected>selecciona una opcion...</option>
@@ -52,9 +58,9 @@
             <div class="col-sm">
                 <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="operador_encargado"><i class="fas fa-user-friends"></i></span>
+                    <span  id="input-group-text2" class="input-group-text centrado" id=""><i class="fas fa-user-friends"></i></span>
                 </div>
-                <input type="text" name="operador_encargado" class="form-control" placeholder="Operador" aria-label="operador_encargado" aria-describedby="operador_encargado">
+                <input id="input-red" type="text" name="operador_encargado" class="form-control" placeholder="Operador" aria-label="operador_encargado" aria-describedby="operador_encargado">
                 </div>
             </div>
         </div>
@@ -65,22 +71,25 @@
                 <!---->
                 <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">Detalles/Observaciones</span>
+                        <span id="input-group-text2" class="input-group-text">Detalles</span>
                     </div>
-                    <textarea class="form-control" aria-label="Detalles" name="detalles_obs"></textarea>
+                    <textarea  id="text-area-detalles" class="form-control" aria-label="Detalles" name="detalles_obs"></textarea>
                 </div>
                 <!---->
             </div>
             </div>
-
+<br><br>
         <div class="row">
-            <div class="col-sm">
-            
-            <button id="enviar" class="btn btn-primary" type="button">
-            Terminar <?=$this->uri->segment(2)?> y tomar evidencia  
-                    <i class="fas fa-arrow-right"></i>
-        </button>
+            <div class="col-sm centrado">
+            <center>
 
+            <button id="enviar"  class="btn btn-blanco " type="button">
+            Pasar a <?=$this->uri->segment(2)?> y tomar foto  
+                    
+        </button>
+            </center>
+            
+        
             </div>
         </div>
         <?=form_close()?>

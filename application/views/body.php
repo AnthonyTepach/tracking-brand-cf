@@ -25,26 +25,29 @@
  
 </script>
 
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-dark bg-barra">
   <!-- Navbar content -->
-  <a class="navbar-brand" href="#">Tracking CF</a>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="fas fa-ellipsis-v"></i> Menú
+  <button class="navbar-toggler" type="button" style="color:#fff; border:0;" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <i class="fas fa-bars"></i> 
   </button>
+  <a class="navbar-brand" href="#">
+    <img src="<?=base_url('/assets/recursos/logo-wrapp.svg')?>" alt="" width="100px" >
+  </a>
+
+ 
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" href="<?=base_url()?>"><i class="fas fa-sign-in-alt"></i> Entrada de Auto</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?=base_url('siguiente_area/limpieza')?>"><i class="fas fa-hand-sparkles"></i> Finalizar limpieza</a>
+        <a class="nav-link" href="<?=base_url('siguiente_area/limpieza')?>"><i class="fas fa-hand-sparkles"></i> Pasar a limpieza</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?=base_url('siguiente_area/instalacion')?>"><i class="fas fa-tools"></i> Finalizar instalación de vinil</a>
+        <a class="nav-link" href="<?=base_url('siguiente_area/instalacion')?>"><i class="fas fa-tools"></i> Pasar a instalación de vinil</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="<?=base_url('siguiente_area/inspeccion')?>"><i class="fas fa-check-double"></i> Finalizar Inspección y calidad</a>
+        <a class="nav-link" href="<?=base_url('siguiente_area/inspeccion')?>"><i class="fas fa-check-double"></i> Pasar a Inspección y calidad</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?=base_url('salida_auto')?>"><i class="fas fa-sign-out-alt"></i> Salida de auto</a>
@@ -53,7 +56,7 @@
         <a class="nav-link" href="<?=base_url('detalles_auto')?>"><i class="fas fa-file-alt"></i> Reportes</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
       </li>
     </ul>
   </div>

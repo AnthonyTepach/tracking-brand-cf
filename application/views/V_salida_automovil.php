@@ -12,8 +12,8 @@
 <div class="container">
 <hr>
 <?php if ($consulta->num_rows()==0) { ?>
-        <div class="alert alert-warning" role="alert">
-             No han terminado la inspección de ningún automóvil
+        <div class="tamanio bg-degradado" role="alert">
+             No han terminado la inspección de ningún automóvil <img class="img-fluid" width="70px" src="<?=base_url('assets/recursos/camion.svg')?>" alt="vector-camion" srcset="">
         </div>
     <?php } else{?>
 <?=form_open_multipart(base_url()."UpdateSalida",'id="f_salida_auto" oninput="gasolina_output.value=parseInt(gasolina_range.value)"')?>
@@ -22,7 +22,7 @@
             <!---->
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <label class="input-group-text" for="placas_auto">Placas auto</label>
+                    <label id="input-group-text2" class="input-group-text" for="placas_auto">Placas auto</label>
                 </div>
                 <select class="custom-select" id="placas_auto" name="placas_auto">
                     <option selected>selecciona una opcion...</option>
@@ -40,9 +40,9 @@
              <!---->
              <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="fecha_salida"><i class="far fa-calendar-alt"></i></span>
+                        <span id="input-group-text2" class="input-group-text" id="fecha_salida"><i class="far fa-calendar-alt"></i>  Fecha</span>
                     </div>
-                    <input type="text" id="datepicker" class="form-control" placeholder="Fecha salida" aria-label="fecha_salida" aria-describedby="fecha_salida" name="fecha_salida">
+                    <input  type="text" id="datepicker" class="form-control" placeholder="Fecha salida" aria-label="fecha_salida" aria-describedby="fecha_salida" name="fecha_salida">
                     
                 </div>
                 <!---->
@@ -51,7 +51,7 @@
             <!---->
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="kilometraje_fins"><i class="fas fa-sort-numeric-down"></i></span>
+                    <span id="input-group-text2" class="input-group-text" id="kilometraje_fins"> Kilometraje</span>
                 </div>
                 <input type="text" id="solo_num_km" class="form-control" placeholder="Kilometraje salida" aria-label="color_auto" aria-describedby="kilometraje_fin" name="kilometraje_fin">
             </div>
@@ -61,7 +61,7 @@
             <!---->
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="gasolina_ini"><i class="fas fa-sort-numeric-up"></i> Gasolina salida</span>
+                    <span id="input-group-text2" class="input-group-text" id="gasolina_ini"> Gasolina</span>
                 </div>
                 <input type="range" placeholder="Gasolina Entrada" name="gasolina_fin" id="gasolina_range">
                 <span class="badge badge-primary"><output name="gasolina_output" for="gasolina_range" ></output></span>
@@ -76,9 +76,9 @@
         <div class="col-sm">
         <div class="input-group mb-3">
                 <div class="input-group-prepend">
-                    <span class="input-group-text" id="operador_encargado"><i class="fas fa-user-friends"></i></span>
+                    <span id="input-group-text2" class="input-group-text" id="operador_encargado"><i class="fas fa-user-friends"></i></span>
                 </div>
-                <input type="text" name="operador_encargado" class="form-control" placeholder="Operador" aria-label="operador_encargado" aria-describedby="operador_encargado">
+                <input id="input-red" type="text" name="operador_encargado" class="form-control" placeholder="Operador" aria-label="operador_encargado" aria-describedby="operador_encargado">
                 </div>
         </div>
 
@@ -89,18 +89,17 @@
             <!---->
             <div class="input-group">
                     <div class="input-group-prepend">
-                        <span class="input-group-text">Detalles/Observaciones</span>
+                        <span id="input-group-text2" class="input-group-text">Detalles</span>
                     </div>
-                    <textarea class="form-control" aria-label="Detalles" name="detalles_obs"></textarea>
+                    <textarea id="text-area-detalles" class="form-control" aria-label="Detalles" name="detalles_obs"></textarea>
                 </div>
                 <!---->
         </div>
     </div>
+    <br><br>
     <div class="row">
         <div class="col-sm">
-        <button id="enviar" class="btn btn-primary" type="button">Dar Salida 
-        <i class="fas fa-sync-alt"></i>
-        </button>
+        <center><button id="enviar" class="btn btn-blanco" type="button">Dar Salida</button></center>
         </div>
     </div>
     <?=form_close()?>

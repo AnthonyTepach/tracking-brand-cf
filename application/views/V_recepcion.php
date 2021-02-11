@@ -7,64 +7,69 @@
     <?php include APPPATH.'views/header.php';?>
     
 </head>
-<body >
+<body class="">
 <?php include APPPATH.'views/body.php';?>
 
 
+<br>
 
-
-<div class="container">
-    <hr>
+<div class="container bg-degradado" style="height: 100vh;" >
+    <br> 
+    <div class="row " style="padding: 8%;">
+    <div class="centrado">
+        <h4 class="burbuja">Registrar cliente</h4>
+    </div>
     <?=form_open_multipart(base_url()."nuevo_cliente",'id="f_clie"')?>
-    
-    <div class="row">
         <div class="col s12">
             <div class="row">
                 <!-- usuario -->
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1"><i class="far fa-user"></i></span>
+                        <span id="input-group-text" class="input-group-text centrado" id="basic-addon1"><i class="far fa-user"></i></span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Nombre(s)" aria-label="Nombre(s)" aria-describedby="basic-addon1" name="nombre_cli">
+                    <input id="form-control" type="text" class="form-control" placeholder="Nombre(s)" aria-label="Nombre(s)" aria-describedby="basic-addon1" name="nombre_cli">
                 </div>
                 <!-- apat -->
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon2">AP</span>
+                        <span id="input-group-text" class="input-group-text" id="basic-addon2">AP</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Apellido Paterno" aria-label="Apellido Paterno" aria-describedby="basic-addon2" name="apat_cli" >
+                    <input id="form-control" type="text" class="form-control" placeholder="Apellido Paterno" aria-label="Apellido Paterno" aria-describedby="basic-addon2" name="apat_cli" >
                 </div>
                 <!-- amat -->
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon3">AM</span>
+                        <span id="input-group-text" class="input-group-text" id="basic-addon3">AM</span>
                     </div>
-                    <input type="text" class="form-control" placeholder="Apellido Materno" aria-label="Apellido Materno" aria-describedby="basic-addon3" name="amat_cli">
+                    <input id="form-control" type="text" class="form-control" placeholder="Apellido Materno" aria-label="Apellido Materno" aria-describedby="basic-addon3" name="amat_cli">
                 </div>
                  <!-- email -->
                  <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon4"><i class="far fa-envelope"></i></span>
+                        <span id="input-group-text" class="input-group-text" id="basic-addon4"><i class="far fa-envelope"></i></span>
                     </div>
-                    <input type="email" class="form-control" placeholder="Correo electronico" aria-label="Correo electronico" aria-describedby="basic-addon4" name="email_clie">
+                    <input id="form-control" type="email" class="form-control" placeholder="Correo electronico" aria-label="Correo electronico" aria-describedby="basic-addon4" name="email_clie">
                 </div>
                  <!-- telefono -->
                  <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon5"><i class="fas fa-phone-alt"></i></span>
+                        <span id="input-group-text" class="input-group-text" id="basic-addon5"><i class="fas fa-phone-alt"></i></span>
                     </div>
-                    <input type="tel" class="form-control" placeholder="Telefono de contacto" aria-label="Telefono de contacto" aria-describedby="basic-addon5" name="tel_clie">
+                    <input type="tel" id="form-control" class="form-control" placeholder="Telefono de contacto" aria-label="Telefono de contacto" aria-describedby="basic-addon5" name="tel_clie">
                 </div>
-                    <button id="enviar" class="btn btn-primary" type="button">Siguiente 
-                    <i class="fas fa-arrow-right"></i>
+                <div class="centrado">
+                <button id="enviar" class="btn btn-orange " type="button"> 
+                        Siguiente <i class="fas fa-arrow-right"></i>
                     </button>
+                </div>
+                   
                 
             </div>
             
         </div>
-       
+        <?=form_close()?>
     </div>
-    <?=form_close()?>
+    
 
 </div>
 <script type="text/javascript">

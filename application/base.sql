@@ -87,3 +87,9 @@ CREATE TABLE tb_firmas(
     FOREIGN KEY (id_automovil) REFERENCES tb_automovil(id_automovil) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=InnoDB;
 
+CREATE TABLE tb_tokens_push(
+id_token int(99) primary key auto_increment,
+fb_token text,
+fecha_hora_creada datetime
+)ENGINE=InnoDB;
+

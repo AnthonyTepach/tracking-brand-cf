@@ -9,8 +9,9 @@
 <body >
 <?php include APPPATH.'views/body.php';?>
     <div class="container">
-        <div class="alert alert-primary" role="alert">
-            Tomar Fotos 
+        <br>
+        <div class="centrado">
+            <h4 class="burbuja2">Tomar Foto</h4>
         </div>
         <div class="row">
             <div class="col-sm" style="display:none">
@@ -26,18 +27,20 @@
         </div>
         <div class="row">
             <div class="col-sm">
-            <video muted="muted" class="img-fluid" id="video"></video>
-	        <canvas id="canvas" class="img-fluid" style="display:none"></canvas>
+            <video muted="muted" class="img-fluid camara-foto" id="video"></video>
+	        <canvas id="canvas" class="img-fluid camara-foto" style="display:none"></canvas>
             </div>
         </div>
+        <br>
         <div class="row">
             <div class="col-sm">
-                
-                <div class="btn-group" role="group" aria-label="Basic example">
-                    <button  id="boton" type="button" class="btn btn-primary">Tomar Foto</button>
-                    <button onclick="window.location.href='<?=base_url('evidencia_auto/').$this->uri->segment(2).'/'.$this->uri->segment(3)?>'" type="button" class="btn btn-secondary">Grabar video</button>
-                    <button onclick="window.location.href='<?=base_url()?>'" type="button" class="btn btn-danger">Terminar</button>
+                <center>
+                <div class="btn-group " role="group" aria-label="Basic example">
+                    <button  id="boton" type="button" class="btn btn-blanco"><i class="fas fa-camera"></i> Tomar Foto</button>
+                    <button style="display:none;" onclick="window.location.href='<?=base_url('evidencia_auto/').$this->uri->segment(2).'/'.$this->uri->segment(3)?>'" type="button" class="btn btn-secondary">Grabar video</button>
+                    <button onclick="window.location.href='<?=base_url()?>'" type="button" class="btn btn-danger">Omitir</button>
                 </div>
+                </center>
                 <h4><span class="badge badge-light" id="estado"></span></h4>
             </div>
         </div>

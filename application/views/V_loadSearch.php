@@ -9,19 +9,19 @@
     <script type="text/javascript">
         $( document ).ready(function() {
 
-            $("#placas_auto").keypress(function(e) {
+            $("#input-red").keypress(function(e) {
                 if (e.which == 13) {
                     return false;
                 }
             });
-            if ($('#placas_auto').val().length == 0) {
+            if ($('#input-red').val().length == 0) {
                 
             }else{
                  //$('#placas_auto').formSelect();
-            $( "#placas_auto" ).ready(function() {
+            $( "#input-red" ).ready(function() {
                 $.ajax({
                     type:'POST',
-                    url:'informacion_general/'+$( "#placas_auto" ).val(),
+                    url:'informacion_general/'+$("#input-red").val(),
                     data: $("#f_query").serialize(),
                     success:function(data){
                         $('#ajaxQuery').html(data);
@@ -36,13 +36,13 @@
             });//cerrar input ready
             }
            
-            $( "#placas_auto" ).keyup(function() {
-                if($('#placas_auto').val().length == 0){
+            $( "#input-red" ).keyup(function() {
+                if($('#input-red').val().length == 0){
 
                 }else{
                     $.ajax({
                     type:'POST',
-                    url:'informacion_general/'+$( "#placas_auto" ).val() ,
+                    url:'informacion_general/'+$( "#input-red" ).val() ,
                     data: $("#f_query").serialize(),
                     success:function(data){
                         $('#ajaxQuery').html(data);
@@ -65,18 +65,24 @@
     <div class="container">
     <hr>
     <?php if ($consulta->num_rows()==0) { ?>
-        <div class="alert alert-warning" role="alert">
-             No hay ningún automóvil registrado en el sistema. 
+        <div class="tamanio bg-degradado" role="alert">
+             No hay ningún automóvil registrado en el sistema.  <img class="img-fluid" width="70px" src="<?=base_url('assets/recursos/camion.svg')?>" alt="vector-camion" srcset="">
         </div>
     <?php } else{?>
         <div class="row">
             <div class="col-sm">
+                <div class="centrado">
+                    <h4 class="burbuja2">Reporte</h4>
+                </div>
+
+
+
+
                 <form id="f_query">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="placas_auto1"><i class="fas fa-search"></i></span>
-                    </div>
-                        <input type="text" class="form-control" placeholder="Buscar por placa" aria-label="Placas del automóvil" aria-describedby="placas_auto1"  id="placas_auto" name="placas_auto">
+                        <span id="input-group-text2"  class="input-group-text" id="placas_auto1"><i class="fas fa-search"></i></span>
+                        <input id="input-red" type="text" class="form-control" placeholder="Buscar por placa" aria-label="Placas del automóvil" aria-describedby="placas_auto1"   name="placas_auto">
                 </div>
                 </form>
             </div>
